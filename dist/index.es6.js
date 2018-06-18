@@ -25,7 +25,6 @@ class WhcgBoxContainer extends PolymerElement {
 
     </style>
 
-    <h2>{{name}}</h2>
     <div id="flexbox">
       <slot id="slotid"></slot>
     </div>
@@ -42,12 +41,6 @@ class WhcgBoxContainer extends PolymerElement {
             readOnly: false,
             observer: '_setDirection'
         },
-      name: {
-        type: String,
-        notify: true,
-        readOnly: false,
-  
-    }
     }
   };
 
@@ -57,5 +50,6 @@ class WhcgBoxContainer extends PolymerElement {
   }
 
 }
+
 
 window.customElements.define('whcg-box-container', WhcgBoxContainer);
