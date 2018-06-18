@@ -1,7 +1,7 @@
 # &lt;whcg-box-container&gt;
 
 ```html
-<whcg-box-container column></whcg-box-container>
+<whcg-box-container name="Kostnader"></whcg-box-container>
 ```
 
 ## Getting started 
