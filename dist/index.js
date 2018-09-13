@@ -9,6 +9,11 @@ class WhcgBoxContainer extends polymerElement_js.PolymerElement {
   static get template() {
     return polymerElement_js.html`
     <style>
+
+      :root {
+        background-color: var(--parmaco-transparent);
+        color: var(--parmaco-base-color-100pct);
+      }
         #flexbox {
           display: flex;
         }
@@ -21,8 +26,15 @@ class WhcgBoxContainer extends polymerElement_js.PolymerElement {
         flex-direction: column;
     }
 
+    h2 {
+      font-family: var(--parmaco-font-family);
+      font-size: var(--parmaco-font-size-xl);
+      font-weight: var(--parmaco-font-weight-medium);
+    }
+
     ::slotted(*) {
       padding-right:20px;
+      
     }
 
     </style>
