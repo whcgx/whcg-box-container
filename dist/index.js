@@ -3,43 +3,29 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var polymerElement_js = require('@polymer/polymer/polymer-element.js');
+require('@whcg/whcg-general-styles/flex.js');
 
 class WhcgBoxContainer extends polymerElement_js.PolymerElement {
 
   static get template() {
     return polymerElement_js.html`
-    <style>
+    <style include="style-element-flex">
 
-      :root {
-        background-color: var(--parmaco-transparent);
-        color: var(--parmaco-base-color-100pct);
-      }
-        #flexbox {
-          display: flex;
-        }
-
-      .row {  
-          flex-direction: row;
+      .headline {
+        color: var(--whcg-box-container-headline-color);
+        font-family: var(--whcg-box-container-headline-font-family);
+        font-size: var(--whcg-box-container-headline-font-size);
+        font-weight: var(--whcg-box-container-headline-font-weight);
       }
 
-      .column {  
-        flex-direction: column;
-    }
-
-    h2 {
-      font-family: var(--parmaco-font-family);
-      font-size: var(--parmaco-font-size-xl);
-      font-weight: var(--parmaco-font-weight-medium);
-    }
-
-    ::slotted(*) {
-      padding-right:20px;
-      
-    }
+      ::slotted(*) {
+        padding-right: var(--whcg-box-container-slotted-padding-right);
+        padding-top: var(--whcg-box-container-slotted-padding-top);
+      }
 
     </style>
-    <h2>{{name}}</h2>
-    <div id="flexbox">
+    <span class="headline">{{name}}</span>
+    <div id="box" class="flex flex-row">
       <slot id="slotid"></slot>
     </div>
   `;
@@ -62,8 +48,8 @@ class WhcgBoxContainer extends polymerElement_js.PolymerElement {
   }
 
   _setDirection() {
-    this.$.flexbox.classList.remove('row');
-    this.$.flexbox.classList.add('column');
+    this.$.box.classList.remove('flex-row');
+    this.$.box.classList.add('flex-column');
   }
 }
 
